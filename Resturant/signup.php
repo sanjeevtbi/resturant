@@ -1,8 +1,16 @@
+
+<!--TODO:still need to update  -->
+
 <html>
-<body>
+<body background="log.jpg">
+	<center>
+	<h2>SIGNUP</h2>
+	<!--TODO:create login(with session) form after signup  -->
+	
 	<form name="signup" method=post action="menu.php">
 		<table>
 			<tr>
+				<!--TODO:Check if numeric values are given  -->
 				<td><label>CUSTOMER NAME</label>
 				</td>
 				<td><input type=text name="custname" value="">
@@ -10,6 +18,7 @@
 			</tr>
 
 			<tr>
+					<!--TODO:Check mail format  -->
 				<td><label>MAIL ID</label>
 				</td>
 				<td><input type=text name="mailid" value="">
@@ -17,6 +26,7 @@
 			</tr>
 
 			<tr>
+				<!--TODO:Check password Strength  -->
 				<td><label>PASSWORD</label>
 				</td>
 				<td><input type=password name="password" value="">
@@ -39,6 +49,7 @@
 			</tr>
 		</table>
 	</form>
-</body>
+</center>
+	</body>
 </html>
 

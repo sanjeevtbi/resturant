@@ -15,18 +15,23 @@ $top=$_POST['ch1']
 		BILL FOR
 		<?php echo $_SESSION['cname']; ?>
 	</h1>
-	<table>
+	<center>
+	<table  cellpadding=5  cellspacing=5>
 		<tr>
+			<td><label> ORDERED DISHES</label></td>
 			<td><?php 
 			if(empty($dishes))
 			{
 				echo("You didn't select any of dishes");
 			}
 			foreach ($dishes as $selectedOption)
-				echo $selectedOption."\n";?>
+				echo $selectedOption."\n";
+			$_SESSION['dishes']=$selectedOption;
+			?>
 			</td>
 		</tr>
 		<tr>
+			<td><label>NUMBER OF DISHES</label></td>
 			<td><?php 
 			if(empty($disquan))
 			{
@@ -34,6 +39,7 @@ $top=$_POST['ch1']
 			} echo $disquan;?></td>
 		</tr>
 		<tr>
+				<td><label>ICECREAMS</label></td>
 			<td><?php
 			if(empty($ice))
 			{
@@ -42,6 +48,7 @@ $top=$_POST['ch1']
 			echo $ice;?></td>
 		</tr>
 		<tr>
+				<td><label>NUMBER OF ICECREAMS</label></td>
 			<td><?php 
 			if(empty($icequan))
 			{
@@ -49,12 +56,17 @@ $top=$_POST['ch1']
 			}
 			echo $icequan;?></td>
 		</tr>
-	<tr><td><?php if(empty($top))
+	<tr>
+		<td><label>TOOPINGS THAT U WANT</label></td>
+	<td><?php if(empty($top))
 			{
-				echo("You didn't select any of dishes");
+				echo("You didn't select any Toppings");
 			}
 			foreach ($top as $selected)
-				echo $selected."\n";?>
+				echo $selected."\n";
+			
+			?>
 	</table>
-</body>
+</center>
+	</body>
 </html>

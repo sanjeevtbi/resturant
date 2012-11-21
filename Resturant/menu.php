@@ -7,55 +7,90 @@ $pass=$_POST["password"];
 $_SESSION['cname']=$name;
 $_SESSION['cmail']=$mail;
 $_SESSION['cpass']=$pass;
-echo $_SESSION['cname'];
 ?>
 <html>
 <head>
 <title>WELCOME TO RESTURANT</title>
 </head>
 <body>
-	<H2><marquee>WELCOME!!!!!!!!!</marquee><img src="header.jpg" alt="header" width="1000" height="100"/></H2>
+	<H2>
+		<marquee>WELCOME!!!!!!!!!</marquee>
+		<img src="header.jpg" alt="header" width="1400" height="100" />
+	</H2>
+	<h4>
+		
+		<?php 
 
+		//TODO:select quantity for each items in the menu card
+		//Select your required menu item to order
+		//Multiple items are allowed to select
+		
+		echo "!!WELCOME ",$_SESSION['cname'];?>
+	</h4>
+	<center>
 	<form action="bill.php" method="post">
-	<table>
-	<tr><td><label>DISHES</label></td>
-		<td> <select multiple="multiple" name="dish[]">
-			<option value="dosa">DOSA</option>
-			<option value="puri">PURI</option>
-			<option value="parrota">PARROTA</option>
-			<option value="sand">SANDWITCH</option>
-			<option value="idli">IDLI</option>
-		</select></td></tr>
-		<tr><td> <label>QUANTITY</label></td> 
-		<td><select name="quan">
-			<option value=""></option>
-			<option value="one">1</option>
-			<option value="two">2</option>
-			<option value="three">3</option>
-			<option value="four">4</option>
-			<option value="five">5</option>
-		</select></td></tr>
-		<tr><td> <label>ICECREAM</label></td>
-		<td> <input type=radio name="r1"
-			value="VENNILA">VENNILA 
-			<input type=radio name="r1"
-			value="STRAWBERRY">STRAWBERRY <input type=radio name="r1"
-			value="BUTTERSCOTCH">BUTTERSCOTCH</td></tr>
-			 <tr><td><label>QUANTITY</label></td> 
-			 <td><select name="quan2">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-		</select></td></tr>
-		 <tr><td><label>TOPPINGS</label></td> 
-		 <td><input type="checkbox"name="ch1[]" value="NUTS">NUTS 
-			<input type="checkbox" name="ch1[]"value="DRYFRUITS">DRYFRUITS</td></tr>
-			<tr><td></td><td> <input type=submit value="ORDER"></td></tr>
-	
-	</table>
-	</form>
+		<table cellpadding=5  cellspacing=5>
+			<tr>
+				<td><label>MENU CARD</label></td>
+				<td><select multiple="multiple" name="dish[]">
+						<option value="dosa">DOSA</option>
+						<option value="puri">PURI</option>
+						<option value="parrota">PARROTA</option>
+						<option value="sand">SANDWITCH</option>
+						<option value="idli">IDLI</option>
+				</select></td>
+			</tr>
 
+			<!-- SELECT NO OF DISHES THAT WANT -->
+
+			<tr>
+				<td><label>QUANTITY</label></td>
+				<td><select name="quan">
+						<option value=""></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+				</select></td>
+			</tr>
+			<tr>
+				
+			<!-- SELECT ICECREAM THAT WANT -->
+			
+				<td><label>ICECREAM</label></td>
+				<td><input type=radio name="r1" value="VENNILA">VENNILA <input
+					type=radio name="r1" value="STRAWBERRY">STRAWBERRY <input
+					type=radio name="r1" value="BUTTERSCOTCH">BUTTERSCOTCH</td>
+			</tr>
+			<tr>
+			
+			<!-- SELECT NO OF ICECREAMS THAT  U WANT -->
+				<td><label>QUANTITY</label></td>
+				<td><select name="quan2">
+						<option value=""></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+				</select></td>
+			</tr>
+			<tr>
+			
+			<!-- SELECT ANY TOPPINGS THAT U WANT -->
+			
+				<td><label>TOPPINGS</label></td>
+				<td><input type="checkbox" name="ch1[]" value="NUTS">NUTS <input
+					type="checkbox" name="ch1[]" value="DRYFRUITS">DRYFRUITS</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type=submit value="ORDER"></td>
+			</tr>
+
+		</table>
+	</form>
+</center>
 </body>
 </html>
