@@ -15,7 +15,7 @@ $top=$_POST['ch1']
 		BILL FOR
 		<?php echo $_SESSION['cname']; ?>
 	</h1>
-	<center>
+
 	<table  cellpadding=5  cellspacing=5>
 		<tr>
 			<td><label> ORDERED DISHES</label></td>
@@ -36,7 +36,9 @@ $top=$_POST['ch1']
 			if(empty($disquan))
 			{
 				echo("You didn't select any of dishes");
-			} echo $disquan;?></td>
+			} echo $disquan;
+			$_SESSION['disquan']=$disquan;			
+			?></td>
 		</tr>
 		<tr>
 				<td><label>ICECREAMS</label></td>
@@ -44,29 +46,42 @@ $top=$_POST['ch1']
 			if(empty($ice))
 			{
 				echo("You didn't select any of icecreams");
+				$_SESSION['ice']="NO ICECREAMS";
 			} 
-			echo $ice;?></td>
+			else{
+			echo $ice;
+			$_SESSION['ice']=$ice;}
+			?></td>
 		</tr>
 		<tr>
 				<td><label>NUMBER OF ICECREAMS</label></td>
 			<td><?php 
+			
+			//TODO:if no icecreams are selected then this quantity field is to disabled
 			if(empty($icequan))
 			{
 				echo("You didn't select icream quantity");
+				$_SESSION['icequan']="NO ICECREAMS";
 			}
-			echo $icequan;?></td>
+			else{
+			echo $icequan;
+			$_SESSION['icequan']=$icequan;
+			}?></td>
 		</tr>
 	<tr>
 		<td><label>TOOPINGS THAT U WANT</label></td>
 	<td><?php if(empty($top))
 			{
 				echo("You didn't select any Toppings");
+				$_SESSION['icequan']="NO TOPPINGS";
 			}
+			else{
 			foreach ($top as $selected)
 				echo $selected."\n";
-			
+			$_SESSION['icequan']=$selected;
+			}
 			?>
 	</table>
-</center>
+
 	</body>
 </html>

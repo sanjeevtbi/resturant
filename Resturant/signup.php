@@ -3,7 +3,7 @@
 
 <html>
 <body background="log.jpg">
-	<center>
+	
 	<h2>SIGNUP</h2>
 	<!--TODO:create login(with session) form after signup  -->
 	
@@ -49,7 +49,7 @@
 			</tr>
 		</table>
 	</form>
-</center>
+
 	</body>
 </html>
 

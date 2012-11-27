@@ -27,7 +27,7 @@ $_SESSION['cpass']=$pass;
 		
 		echo "!!WELCOME ",$_SESSION['cname'];?>
 	</h4>
-	<center>
+	
 	<form action="bill.php" method="post">
 		<table cellpadding=5  cellspacing=5>
 			<tr>
@@ -91,6 +91,6 @@ $_SESSION['cpass']=$pass;
 
 		</table>
 	</form>
-</center>
+
 </body>
 </html>
